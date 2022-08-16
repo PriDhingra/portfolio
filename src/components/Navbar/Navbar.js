@@ -197,7 +197,7 @@ function Navbar() {
 
                         <Fade left>
                             <NavLink
-                                to='/#about'
+                                to='/#home'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
@@ -211,7 +211,7 @@ function Navbar() {
                             </NavLink>
                         </Fade>
 
-                        <Fade left>
+                        {/* <Fade left>
                             <NavLink
                                 to='/#resume'
                                 smooth={true}
@@ -227,9 +227,63 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
+                        </Fade> */}
+
+                        <Fade left>
+                            <NavLink
+                                to='/#resume'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <FaFolderOpen
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Education
+                                    </span>
+                                </div>
+                            </NavLink>
                         </Fade>
 
                         <Fade left>
+                            <NavLink
+                                to='/#experience'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <FaFolderOpen
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Experience
+                                    </span>
+                                </div>
+                            </NavLink>
+                        </Fade>
+
+                        <Fade left>
+                            <NavLink
+                                to='/#projects'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <FaFolderOpen
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Projects
+                                    </span>
+                                </div>
+                            </NavLink>
+                        </Fade>
+
+                        {/* <Fade left>
                             <NavLink
                                 to='/#services'
                                 smooth={true}
@@ -245,25 +299,7 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#blog'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <FaFolderOpen
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Blog
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                        </Fade> */}
 
                         <Fade left>
                             <NavLink

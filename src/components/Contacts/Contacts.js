@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
+import emailjs from 'emailjs-com';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     FaTwitter,
@@ -14,6 +15,7 @@ import {
     FaStackOverflow,
     FaCodepen,
     FaInstagram,
+    FaCode,
     FaGitlab,
     FaMediumM,
 } from 'react-icons/fa';
@@ -27,6 +29,8 @@ import { socialsData } from '../../data/socialsData';
 import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
 
+const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
+
 function Contacts() {
     const [open, setOpen] = useState(false);
 
@@ -36,6 +40,8 @@ function Contacts() {
 
     const [success, setSuccess] = useState(false);
     const [errMsg, setErrMsg] = useState('');
+
+    const form = useRef();
 
     const { theme } = useContext(ThemeContext);
 
@@ -140,8 +146,10 @@ function Contacts() {
                     message: message,
                 };
 
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
+                emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY)
+                .then((result) => {
+                    console.log(result.text);
+                        console.log('success');
                     setSuccess(true);
                     setErrMsg('');
 
@@ -149,6 +157,8 @@ function Contacts() {
                     setEmail('');
                     setMessage('');
                     setOpen(false);
+                }, (error) => {
+                    console.log(error.text);
                 });
             } else {
                 setErrMsg('Invalid email');
@@ -167,42 +177,42 @@ function Contacts() {
             style={{ backgroundColor: theme.secondary }}
         >
             <div className='contacts--container'>
-                <h1 style={{ color: theme.primary }}>Contacts</h1>
+                <h1 style={{ color: theme.primary }}>Contact</h1>
                 <div className='contacts-body'>
                     <div className='contacts-form'>
-                        <form onSubmit={handleContactForm}>
+                        <form ref={form} onSubmit={handleContactForm}>
                             <div className='input-container'>
-                                <label htmlFor='Name' className={classes.label}>
+                                <label htmlFor='user_name' className={classes.label}>
                                     Name
                                 </label>
                                 <input
-                                    placeholder='John Doe'
+                                    placeholder='Enter your Name'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     type='text'
-                                    name='Name'
+                                    name='user_name'
                                     className={`form-input ${classes.input}`}
                                 />
                             </div>
                             <div className='input-container'>
                                 <label
-                                    htmlFor='Email'
+                                    htmlFor='from_email'
                                     className={classes.label}
                                 >
                                     Email
                                 </label>
                                 <input
-                                    placeholder='John@doe.com'
+                                    placeholder='Enter your Email'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     type='email'
-                                    name='Email'
+                                    name='from_email'
                                     className={`form-input ${classes.input}`}
                                 />
                             </div>
                             <div className='input-container'>
                                 <label
-                                    htmlFor='Message'
+                                    htmlFor='message'
                                     className={classes.label}
                                 >
                                     Message
@@ -212,7 +222,7 @@ function Contacts() {
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     type='text'
-                                    name='Message'
+                                    name='message'
                                     className={`form-message ${classes.message}`}
                                 />
                             </div>
@@ -312,8 +322,8 @@ function Contacts() {
                             </p>
                         </div>
 
-                        <div className='socialmedia-icons'>
-                            {socialsData.twitter && (
+                        <div className='socialmedia-icons socialmediaicons'>
+                            {/* {socialsData.twitter && (
                                 <a
                                     href={socialsData.twitter}
                                     target='_blank'
@@ -322,17 +332,7 @@ function Contacts() {
                                 >
                                     <FaTwitter aria-label='Twitter' />
                                 </a>
-                            )}
-                            {socialsData.github && (
-                                <a
-                                    href={socialsData.github}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaGithub aria-label='GitHub' />
-                                </a>
-                            )}
+                            )} */}
                             {socialsData.linkedIn && (
                                 <a
                                     href={socialsData.linkedIn}
@@ -343,17 +343,29 @@ function Contacts() {
                                     <FaLinkedinIn aria-label='LinkedIn' />
                                 </a>
                             )}
-                            {socialsData.instagram && (
+
+                            {socialsData.github && (
                                 <a
-                                    href={socialsData.instagram}
+                                    href={socialsData.github}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
-                                    <FaInstagram aria-label='Instagram' />
+                                    <FaGithub aria-label='GitHub' />
                                 </a>
                             )}
-                            {socialsData.medium && (
+                            
+                             {socialsData.dsalgo && (
+                                <a
+                                    href={socialsData.dsalgo}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    className={classes.socialIcon}
+                                >
+                                    <FaCode aria-label='Instagram' />
+                                </a>
+                            )}
+                            {/* {socialsData.medium && (
                                 <a
                                     href={socialsData.medium}
                                     target='_blank'
@@ -422,7 +434,7 @@ function Contacts() {
                                 >
                                     <FaGitlab aria-label='GitLab' />
                                 </a>
-                            )}
+                            )} */}
                         </div>
                     </div>
                 </div>

@@ -3,27 +3,30 @@ export const achievementData = {
     achievements : [
         {
             id : 1,
-            title : 'Google Cloud certification',
-            details : 'Google Cloud certifications validate your expertise and showcase your ability to transform businesses with Google Cloud technology.',
-            date : 'Aug 20, 2019',
-            field : 'Automation',
-            image : 'https://images.unsplash.com/photo-1573141597928-403fcee0e056?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80'
+            title : 'Coding Ninjas',
+            details : 'Achieved expert rank in problem solving using Data Structures and Algorithms.',
+            date : 'June, 2022',
+            field: 'Problem Solving',
+            url: 'https://www.codingninjas.com/codestudio/profile/433c5663-bc57-425f-bd1f-aa75397501f0',
+            image : 'https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/1323/original/Coding_Ninjas_logo.jpeg'
         },
         {
             id : 2,
-            title : 'AWS Certification',
-            details : 'Validate technical skills and cloud expertise to grow your career and business.',
-            date : 'Aug 20, 2019',
-            field : 'Automation',
-            image : 'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+            title : 'React Hooks',
+            details : 'React Hooks embed logic into functions in new React applications.',
+            date : 'July, 2022',
+            field: 'Web Development',
+            url: 'https://www.linkedin.com/learning/certificates/fb7004fff690de3e899b9c8517b4d21ffd51289c21075f3b3a427237ad47306c',
+            image : 'https://media-exp1.licdn.com/dms/image/C560BAQEWL3x6YrK4TQ/company-logo_200_200/0/1612473028270?e=2147483647&v=beta&t=xqHtCUPk-cyO2xJLMqh1qMPLXkZyxobBzhzJ0AjohiI'
         },
         {
             id : 3,
-            title : 'Professional Data Engineer Certification',
-            details : 'Professional Data Engineers enable data-driven decision making by collecting, transforming, and publishing data.',
-            date : 'Aug 20, 2019',
-            field : 'Automation',
-            image : 'https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+            title : 'Advanced Java Programming',
+            details : '',
+            date : 'July, 2022',
+            field: 'Software Development',
+            url: 'https://www.linkedin.com/learning/certificates/3aec9fe04ccc9e18fcf322c152e0711457a0edc2517aad5352a0f57675929eef',
+            image : 'https://media-exp1.licdn.com/dms/image/C560BAQEWL3x6YrK4TQ/company-logo_200_200/0/1612473028270?e=2147483647&v=beta&t=xqHtCUPk-cyO2xJLMqh1qMPLXkZyxobBzhzJ0AjohiI'
         }
 
     ]

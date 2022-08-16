@@ -58,6 +58,10 @@ import strapi from '../assets/svg/skills/strapi.svg'
 import tensorflow from '../assets/svg/skills/tensorflow.svg'
 import webix from '../assets/svg/skills/webix.svg'
 import wordpress from '../assets/svg/skills/wordpress.svg'
+import node from '../assets/svg/skills/nodejs.svg';
+import api from '../assets/png/API.png';
+import redux from '../assets/svg/skills/redux.svg';
+import Postman from '../assets/svg/skills/postman.svg';
 
 import azure from '../assets/svg/skills/azure.svg'
 import blender from '../assets/svg/skills/blender.svg'
@@ -79,6 +83,14 @@ import canva from '../assets/svg/skills/canva.svg'
 export const skillsImage = (skill) => {
     const skillID = skill.toLowerCase();
     switch (skillID) {
+        case 'postman':
+            return Postman;
+        case 'redux':
+            return redux;
+        case 'node js':
+            return node;
+        case 'rest api':
+            return api;
         case 'gcp':
             return gcp;
         case 'html':

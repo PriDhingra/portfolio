@@ -14,7 +14,12 @@ import {
     FaGithub,
     FaYoutube,
     FaBlogger,
+    FaCode
 } from 'react-icons/fa';
+
+// import {
+//     SiCodingninjas
+// } from 'react-icons/si';
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
@@ -101,20 +106,20 @@ function Landing() {
                                 />
                             </a>
                         )}
-                        {socialsData.twitter && (
+                        {socialsData.dsalgo && (
                             <a
-                                href={socialsData.twitter}
+                                href={socialsData.dsalgo}
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaTwitter
+                                <FaCode
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
-                                    aria-label='Twitter'
+                                    aria-label='Coding Ninjas'
                                 />
                             </a>
                         )}
-                        {socialsData.youtube && (
+                        {/*{socialsData.youtube && (
                             <a
                                 href={socialsData.youtube}
                                 target='_blank'
@@ -139,7 +144,7 @@ function Landing() {
                                     aria-label='Blogger'
                                 />
                             </a>
-                        )}
+                        )} */}
                     </div>
                 </div>
                 <img
@@ -167,7 +172,7 @@ function Landing() {
                             {headerData.resumePdf && (
                                 <a
                                     href={headerData.resumePdf}
-                                    download='resume'
+                                    download='PrinceDhingra_Resume'
                                     target='_blank'
                                     rel='noreferrer'
                                 >

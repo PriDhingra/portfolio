@@ -1,23 +1,23 @@
 export const educationData = [
     {
         id: 1,
-        institution: 'Marble Hills Middle School',
+        institution: 'St. Mary\'s Convent Sr. Sec. School',
         course: 'Higher Secondary Education',
-        startYear: '2007',
+        startYear: '2013',
         endYear: '2015'
     },
     {
         id: 2,
-        institution: 'Somerset School of Science',
-        course: 'Bachelor of Technology',
+        institution: 'Chandigarh Group Of Colleges, Mohali',
+        course: 'Bachelors of Technology in Computer Science',
         startYear: '2015',
         endYear: '2019'
     },
     {
         id: 3,
-        institution: 'Hawking University, Cambridge',
-        course: 'Master of Technology',
-        startYear: '2019',
-        endYear: 'Present'
+        institution: 'Conestoga College, Kitchener',
+        course: 'Post Graduation Diploma',
+        startYear: '2021',
+        endYear: '2022'
     },
 ]
